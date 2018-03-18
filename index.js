@@ -2,7 +2,7 @@ const express = require('express');
 const redis = require('redis');
 
 var redisClient = redis.createClient({
-    host: 'localhost', port: 6370
+    host: , port: 6370
 });
 redisClient.on('ready', function (response) {
     console.log('client ready');

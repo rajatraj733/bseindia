@@ -6,7 +6,7 @@ const consts = require('./constants');
 const redis = require('redis');
 
 var redisClient = redis.createClient({
-    host: 'localhost', port: 6370
+    host: consts.redis.url, port: consts.redis.port
 });
 redisClient.on('ready', function (response) {
     console.log('client ready');

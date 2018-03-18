@@ -13,6 +13,9 @@ consts.bseMapping = [
     , ['BPCL', '500547'], ['ULTRACEMCO', '532538'], ['TATAMOTORS', '500570'], ['IOC', '530965'], ['COALINDIA', '533278']
 
 ];
+consts.redis = {};
+consts.redis.url = 'localhost';
+consts.redis.port = 6379;
 
 consts.url = 'https://www.bseindia.com/BSEGraph/Graphs/GetStockReachVolPriceDatav1.aspx?index=';
 
