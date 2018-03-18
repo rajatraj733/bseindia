@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "background": "node background.js",
-    "server": "node index.js"
+    "background": "nodejs background.js",
+    "server": "nodejs index.js"
   },
   "keywords": [],
   "author": "",
