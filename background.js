@@ -35,6 +35,7 @@ redisClient.on('ready', function (response) {
             console.error(error);
         })
     }
+    getData();
     setInterval(getData, 1800000);
     return;
 
