@@ -16,6 +16,7 @@ consts.bseMapping = [
 consts.redis = {};
 consts.redis.url = 'localhost';
 consts.redis.port = 6379;
+consts.timeInverval = 240000;
 
 consts.url = 'https://www.bseindia.com/BSEGraph/Graphs/GetStockReachVolPriceDatav1.aspx?index=';
 

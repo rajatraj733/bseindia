@@ -15,7 +15,7 @@ redisClient.on('ready', function (response) {
                 console.error(err);
                 return;
             }
-            console.log('serving stocks');
+            console.log(new Date()+' serving stocks');
             res.send(result);
         })
         // res.send('Hello World');

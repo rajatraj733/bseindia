@@ -10,13 +10,14 @@ var redisClient = redis.createClient({
 });
 redisClient.on('ready', function (response) {
     console.log('client ready');
-    var urls = [];
 
-    for(const stock of consts.bseMapping) {
-        var url = consts.url+stock[1];
-        urls.push(axios.get(url));
-    }
     function getData() {
+        let urls = [];
+
+        for(const stock of consts.bseMapping) {
+            let url = consts.url+stock[1];
+            urls.push(axios.get(url));
+        }
         axios.all(
             urls
         ).then(axios.spread(function(... responses) {
@@ -27,16 +28,17 @@ redisClient.on('ready', function (response) {
                 stocks.push(stock);
                 i++;
             }
-            console.log('stocks added');
             // console.log(stocks);
             const stockString = JSON.stringify(stocks);
+            console.log(stockString);
             redisClient.set('stocks', stockString);
+            console.log(new Date()+' stocks pushed to redis');
         })).catch(function(error) {
             console.error(error);
         })
     }
     getData();
-    setInterval(getData, 1800000);
+    setInterval(getData, consts.timeInverval);
     return;
 
 });
